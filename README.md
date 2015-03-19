@@ -26,6 +26,8 @@ appSettings:
 - Allow: define the Active Directory groups you wish to give access in the format DOMAIN\GROUPNAME (separated by a comma)
 - DiscourseUrl: the URL for your discourse server.
 
+Go to the /discsso/test page to see if everything works before updating Discourse.
+
 ### Update Discourse
 
 In Admin go to the login section:
