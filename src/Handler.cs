@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Specialized;
 using System.Configuration;
@@ -87,7 +87,7 @@ namespace DiscSso
     {
       WindowsIdentity wid=HttpContext.Current.Request.LogonUserIdentity;
       if (wid==null || !wid.IsAuthenticated || !validAuthTypes.Contains(wid.AuthenticationType.ToLower()))
-        throw new Exception("no auth");
+        throw new Exception("Not authenticated (you need to disable anon and enable Windows authentication in IIS)!");
       var wp=new WindowsPrincipal(wid);
       if (!allow.Any(x => wp.IsInRole(x)))
         throw new Exception("access-denied");
